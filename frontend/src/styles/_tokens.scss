@@ -1,0 +1,105 @@
+// ============================================
+// Rəf — Design Tokens
+// "Kitabxana kataloqu" konsepti: isti parşömen fon,
+// tünd şam-yaşılı mətn, dəri-qızılı və pas-qırmızı vurğular.
+// ============================================
+
+:root {
+  // ---- Colors ----
+  --color-paper: #efebdd; // əsas isti fon
+  --color-paper-alt: #e7e2d0; // bir az tünd fon (footer, alt bölmələr)
+  --color-card: #fbf9f2; // kart səthi
+  --color-ink: #20261f; // əsas mətn (tünd şam-yaşılı)
+  --color-ink-soft: #454f42; // ikinci dərəcəli mətn
+  --color-muted: #736c5c; // sönük mətn / meta
+
+  --color-primary: #2f6f5e; // kitabxana yaşılı (əsas vurğu)
+  --color-primary-dark: #1f4a3f;
+  --color-primary-light: #e4efe9;
+
+  --color-gold: #c68a2e; // dəri-qızılı (save stampi)
+  --color-gold-dark: #9c6c1f;
+
+  --color-rust: #ae4530; // pas-qırmızı (remove / danger)
+  --color-rust-dark: #8a3423;
+
+  --color-border: rgba(32, 38, 31, 0.14);
+  --color-border-strong: rgba(32, 38, 31, 0.28);
+
+  // ---- Typography ----
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Work Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  // ---- Radii / shadows ----
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-card: 0 1px 2px rgba(32, 38, 31, 0.06), 0 6px 18px rgba(32, 38, 31, 0.08);
+  --shadow-card-hover: 0 2px 4px rgba(32, 38, 31, 0.08), 0 14px 30px rgba(32, 38, 31, 0.14);
+
+  // ---- Layout ----
+  --container-width: 1280px;
+  --header-height: 76px;
+}
+
+// ============================================
+// Breakpoint dəyişənləri və mixin-lər
+// SCSS $dəyişənləri CSS custom property (var(--..))
+// kimi @media daxilində işləmədiyi üçün burada
+// ayrıca saxlanılır. İstifadə etmək üçün fayl
+// başında aşağıdakı sətri əlavə edin:
+//   @use "../../styles/tokens" as tokens;
+// və: @include tokens.mobile-lg { ... }
+// ============================================
+
+$breakpoint-mobile: 576px; // kiçik telefonlar
+$breakpoint-mobile-lg: 640px; // böyük telefonlar
+$breakpoint-tablet: 768px; // planşetlər
+$breakpoint-tablet-lg: 900px; // böyük planşet / kiçik laptop (header və s.)
+$breakpoint-laptop: 1024px; // laptop
+$breakpoint-desktop: 1440px; // geniş ekran / PC
+
+// ---- "aşağı doğru" (max-width) mixin-lər ----
+@mixin mobile {
+  @media (max-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin mobile-lg {
+  @media (max-width: #{$breakpoint-mobile-lg}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin tablet-lg {
+  @media (max-width: #{$breakpoint-tablet-lg}) {
+    @content;
+  }
+}
+
+// ---- "yuxarı doğru" (min-width) mixin-lər ----
+@mixin tablet-up {
+  @media (min-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin laptop-up {
+  @media (min-width: #{$breakpoint-laptop}) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}

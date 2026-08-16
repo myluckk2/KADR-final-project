@@ -1,0 +1,13 @@
+@use "../../styles/tokens" as tokens;
+
+.sectionHeaderRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 3rem;
+
+  @include tokens.mobile-lg {
+    flex-direction: column;
+  }
+}

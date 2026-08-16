@@ -1,0 +1,34 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+
+  &.center {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+
+  &::before {
+    content: "◆ ";
+  }
+}
+
+.title {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  max-width: 40ch;
+}
+
+.description {
+  font-size: 1.05rem;
+  color: var(--color-ink-soft);
+  max-width: 56ch;
+}

@@ -1,0 +1,72 @@
+@use "../../styles/tokens" as tokens;
+
+.footer {
+  margin-top: auto;
+  background-color: var(--color-paper-alt);
+  border-top: 1px solid var(--color-border);
+  padding-block: 2.5rem;
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logoMark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1.5px dashed var(--color-primary);
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-weight: 700;
+  transform: rotate(-6deg);
+}
+
+.brandName {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.tagline {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  font-size: 0.9rem;
+  color: var(--color-ink-soft);
+
+  a:hover {
+    color: var(--color-primary);
+  }
+}
+
+.copy {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+@include tokens.mobile-lg {
+  .inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

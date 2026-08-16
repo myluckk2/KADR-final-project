@@ -1,0 +1,64 @@
+.stamp {
+  position: absolute;
+  top: 10px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(251, 249, 242, 0.92);
+  backdrop-filter: blur(2px);
+  transform: rotate(-8deg);
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease,
+    color 0.2s ease;
+  z-index: 2;
+
+  &:hover:not(:disabled) {
+    transform: rotate(0deg) scale(1.08);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: wait;
+  }
+}
+
+.ring {
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  border: 1.5px dashed currentColor;
+  opacity: 0.55;
+}
+
+.icon {
+  position: relative;
+  font-size: 1.05rem;
+  z-index: 1;
+}
+
+.iconFilled {
+  fill: currentColor;
+}
+
+// ---- Save (sağ üst) ----
+.save {
+  right: 10px;
+  color: var(--color-primary);
+
+  &.active {
+    color: var(--color-gold-dark);
+    background: rgba(198, 138, 46, 0.16);
+  }
+}
+
+// ---- Remove (sol üst, yalnız wishlist səhifəsində) ----
+.remove {
+  left: 10px;
+  color: var(--color-rust);
+
+  &:hover:not(:disabled) {
+    background: rgba(174, 69, 48, 0.14);
+  }
+}

@@ -1,0 +1,25 @@
+@use "../../styles/tokens" as tokens;
+
+.grid {
+  display: grid;
+  // Mobile-first: telefon üçün baza dəyər (2 sütun)
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+
+  // Planşet (~768px+): 3 sütun
+  @include tokens.tablet-up {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  // Laptop (~1024px+): 5 sütun
+  @include tokens.laptop-up {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+  }
+
+  // PC / geniş ekran (~1440px+): 7 sütun
+  @include tokens.desktop-up {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}

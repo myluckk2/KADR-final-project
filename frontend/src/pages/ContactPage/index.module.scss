@@ -1,0 +1,99 @@
+@use "../../styles/tokens" as tokens;
+
+.wrapper {
+  padding-block: 3.5rem 4.5rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2rem;
+  align-items: start;
+
+  @include tokens.tablet {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-ink-soft);
+
+  input,
+  textarea {
+    border: 1.5px solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+    padding: 0.65rem 0.8rem;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    resize: vertical;
+
+    &:focus {
+      outline: none;
+      border-color: var(--color-primary);
+    }
+  }
+}
+
+.success {
+  font-size: 0.9rem;
+  color: var(--color-primary-dark);
+  background: var(--color-primary-light);
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--radius-sm);
+}
+
+.error {
+  font-size: 0.9rem;
+  color: var(--color-rust);
+  background: color-mix(in srgb, var(--color-rust) 12%, transparent);
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--radius-sm);
+}
+
+.infoCard {
+  background: var(--color-paper-alt);
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+
+  h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    font-size: 0.95rem;
+  }
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+}

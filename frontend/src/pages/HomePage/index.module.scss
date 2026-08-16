@@ -1,0 +1,51 @@
+@use "../../styles/tokens" as tokens;
+
+.hero {
+  padding-block: 4rem 3rem;
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(47, 111, 94, 0.1), transparent 45%),
+    radial-gradient(circle at 85% 0%, rgba(198, 138, 46, 0.12), transparent 40%);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.heroInner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 720px;
+}
+
+.heroEyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+
+  &::before {
+    content: "◆ ";
+  }
+}
+
+.heroTitle {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  letter-spacing: -0.01em;
+}
+
+.heroText {
+  font-size: 1.1rem;
+  color: var(--color-ink-soft);
+  max-width: 56ch;
+}
+
+.sectionHeaderRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 3rem;
+
+  @include tokens.mobile-lg {
+    flex-direction: column;
+  }
+}
